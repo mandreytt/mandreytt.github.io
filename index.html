@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andre Braun – Marketing Experte • Influencer • Speaker</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg-dark:#0c0c0f;--bg-card:#141418;--bg-light:#f7f6f3;--bg-white:#fff;--accent:#c8ff00;--accent-dim:rgba(200,255,0,.12);--text-white:#fff;--text-light:#a8a6b0;--text-dark:#1a1a1a;--text-muted:#6b6b74;--border-dark:rgba(255,255,255,.07);--border-light:rgba(0,0,0,.08);--radius-lg:1.25rem;--radius-md:1rem;--radius-sm:.625rem;--font-display:'Playfair Display',Georgia,serif;--font-body:'Plus Jakarta Sans',sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);-webkit-font-smoothing:antialiased;overflow-x:hidden;background:var(--bg-dark);color:var(--text-dark)}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+.container{max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.75rem 0;transition:all .4s}
+nav.scrolled{background:rgba(12,12,15,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dark)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.nav-brand{display:flex;align-items:center;gap:.75rem}
+.nav-brand-icon{width:36px;height:36px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:var(--bg-dark)}
+.nav-brand-text{color:var(--text-white);font-weight:700;font-size:1rem}
+.nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
+.nav-links a{color:var(--text-light);font-size:.82rem;font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--text-white)}
+.nav-cta-btn{background:var(--accent)!important;color:var(--bg-dark)!important;padding:.6rem 1.5rem;border-radius:100px;font-weight:700!important;transition:all .3s!important}
+.nav-cta-btn:hover{transform:scale(1.04);box-shadow:0 0 20px rgba(200,255,0,.25)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text-white);margin:5px 0;transition:all .3s}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--bg-dark);display:flex;align-items:center;padding:7rem 0 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,.05) 0%,transparent 60%);pointer-events:none}
+.hero .container{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-dim);border:1px solid rgba(200,255,0,.2);padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem;font-size:.72rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;opacity:0;animation:fadeUp .7s ease .2s forwards}
+.hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,4.8rem);line-height:1.05;color:var(--text-white);letter-spacing:-.03em;margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s ease .35s forwards}
+.hero h1 .highlight{color:var(--accent);font-style:italic}
+.hero-sub{font-size:clamp(.95rem,1.3vw,1.1rem);line-height:1.75;color:var(--text-light);max-width:440px;margin-bottom:2.5rem;opacity:0;animation:fadeUp .7s ease .5s forwards}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s ease .65s forwards}
+.btn-accent{background:var(--accent);color:var(--bg-dark);padding:.9rem 2rem;border-radius:100px;font-size:.88rem;font-weight:700;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s;border:none;cursor:pointer}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,255,0,.2)}
+.btn-outline{background:transparent;color:var(--text-white);padding:.9rem 2rem;border-radius:100px;font-size:.88rem;font-weight:600;border:1.5px solid rgba(255,255,255,.15);transition:all .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-outline:hover{border-color:rgba(255,255,255,.4);transform:translateY(-2px)}
+
+/* Hero Mockup */
+.hero-visual{position:relative}
+.hero-mockup{border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(145deg,#1a1a22,#0f0f14);border:1px solid var(--border-dark);box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.mockup-bar{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-bottom:1px solid var(--border-dark);background:rgba(255,255,255,.02)}
+.mockup-dot{width:10px;height:10px;border-radius:50%}.mockup-dot:nth-child(1){background:#ff5f57}.mockup-dot:nth-child(2){background:#ffbd2e}.mockup-dot:nth-child(3){background:#28c840}
+.mockup-url{flex:1;margin-left:.75rem;background:rgba(255,255,255,.05);border-radius:6px;padding:.35rem .75rem;font-size:.7rem;color:var(--text-muted)}
+.mockup-body{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;padding:1.25rem}
+.mock-img{border-radius:var(--radius-sm);aspect-ratio:16/10;overflow:hidden}
+.hero-float{position:absolute;padding:.6rem 1rem;background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-sm);font-size:.75rem;font-weight:600;color:var(--text-white);box-shadow:0 10px 30px rgba(0,0,0,.4);display:flex;align-items:center;gap:.5rem;z-index:10}
+.hero-float.f1{top:1rem;right:-.5rem;animation:hfloat 4s ease-in-out infinite}
+.hero-float.f2{bottom:6rem;left:-.5rem;animation:hfloat 4s ease-in-out 1.5s infinite}
+.hf-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.hf-icon.green{background:var(--accent-dim)}.hf-icon.blue{background:rgba(100,150,255,.1)}
+@keyframes hfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* LOGOS */
+.logos-section{background:var(--bg-dark);padding:2.5rem 0;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark);overflow:hidden}
+.logos-label{text-align:center;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-bottom:1.5rem}
+.logos-track{display:flex;animation:mscroll 25s linear infinite;width:max-content}
+.logo-item{padding:0 clamp(1.5rem,3vw,3rem)}.logo-item span{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.15);letter-spacing:.05em;text-transform:uppercase}
+@keyframes mscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SHARED */
+.section-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:1rem}
+.section-tag::before{content:'';width:20px;height:2px;background:var(--accent)}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,3.8vw,3.4rem);line-height:1.12;letter-spacing:-.02em;color:var(--text-white)}
+.section-title .muted{color:var(--text-muted)}.section-title .italic{font-style:italic;color:var(--accent)}
+
+/* WER BIN ICH */
+.who{background:var(--bg-light);padding:clamp(5rem,10vw,8rem) 0}
+.who .container{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,5vw,5rem);align-items:center}
+.who-images{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;position:relative}
+.who-img-box{border-radius:var(--radius-md);overflow:hidden}
+.who-img-box:first-child{grid-row:1/3}
+.who-img-box img{width:100%;height:100%;object-fit:cover;display:block}
+.who-stats-float{position:absolute;bottom:-1rem;right:-1rem;background:var(--bg-dark);color:var(--text-white);padding:1.25rem 1.5rem;border-radius:var(--radius-md);box-shadow:0 20px 40px rgba(0,0,0,.15);display:flex;gap:2rem;z-index:5}
+.who-stat{text-align:center}.who-stat-num{font-family:var(--font-display);font-size:1.8rem;font-weight:700;line-height:1;color:var(--accent)}.who-stat-label{font-size:.7rem;color:var(--text-light);margin-top:.25rem}
+.who-text .section-tag{color:var(--text-dark)}.who-text .section-tag::before{background:var(--text-dark)}
+.who-text h2{font-family:var(--font-display);font-size:clamp(2rem,3.2vw,2.8rem);line-height:1.15;color:var(--text-dark);margin-bottom:1.75rem}
+.who-text h2 .accent{color:var(--text-muted);font-style:italic}
+.who-text p{font-size:1rem;line-height:1.8;color:var(--text-muted);margin-bottom:1.25rem}
+.press-row{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-light)}
+.press-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:.75rem}
+.press-logos{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}
+.press-logo{padding:.4rem 1rem;background:rgba(0,0,0,.04);border-radius:6px;font-size:.8rem;font-weight:700;color:rgba(0,0,0,.25);letter-spacing:.03em}
+
+/* WAS MACHE ICH - Case Cards */
+.what{background:var(--bg-dark);padding:clamp(5rem,10vw,8rem) 0}
+.what-cards{display:flex;flex-direction:column;gap:2rem;margin-top:3.5rem}
+.wc{display:grid;grid-template-columns:1.2fr 1fr;background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);overflow:hidden;transition:all .5s;position:relative}
+.wc:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.12);box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.wc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.wc:hover::before{transform:scaleX(1)}
+.wc.reverse{grid-template-columns:1fr 1.2fr}
+.wc-img{position:relative;overflow:hidden;min-height:380px}
+.wc-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .8s}
+.wc:hover .wc-img img{transform:scale(1.05)}
+.wc-img-overlay{position:absolute;inset:0;pointer-events:none;z-index:2}
+.wc-img-overlay.r{background:linear-gradient(to right,transparent 50%,var(--bg-card))}
+.wc-img-overlay.l{background:linear-gradient(to left,transparent 50%,var(--bg-card))}
+.wc-body{padding:clamp(1.5rem,3vw,2.5rem);display:flex;flex-direction:column;justify-content:center}
+.wc-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;margin-bottom:.75rem;display:inline-flex;background:var(--accent-dim);padding:.35rem .9rem;border-radius:100px;width:fit-content}
+.wc-body h3{font-family:var(--font-display);font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.2;color:var(--text-white);margin-bottom:1rem}
+.wc-body>p{font-size:.92rem;line-height:1.7;color:var(--text-light);margin-bottom:1.5rem}
+.wc-link{font-size:.82rem;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:.35rem;transition:gap .3s}.wc-link:hover{gap:.65rem}
+
+/* Follower */
+.fb-total{margin-bottom:1rem}.fb-total-num{font-family:var(--font-display);font-size:2.2rem;color:var(--accent);font-weight:700;line-height:1}.fb-total-label{font-size:.72rem;color:var(--text-muted);margin-top:.25rem}
+.follower-bar{display:flex;gap:.4rem;margin-bottom:1.25rem}
+.fb-item{flex:1;text-align:center;padding:.6rem .25rem;background:rgba(255,255,255,.03);border:1px solid var(--border-dark);border-radius:var(--radius-sm)}
+.fb-item-num{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text-white);line-height:1}.fb-item-label{font-size:.6rem;color:var(--text-muted);margin-top:.2rem}
+
+/* Speaker Topics */
+.speaker-topics{display:flex;flex-direction:column;gap:.6rem}
+.sp-topic{display:flex;align-items:flex-start;gap:.6rem;padding:.65rem .85rem;background:rgba(255,255,255,.03);border:1px solid var(--border-dark);border-radius:var(--radius-sm);transition:all .3s}
+.sp-topic:hover{background:rgba(255,255,255,.06);border-color:rgba(200,255,0,.15)}
+.sp-topic-icon{flex-shrink:0;width:22px;height:22px;border-radius:6px;background:var(--accent-dim);display:flex;align-items:center;justify-content:center;font-size:.65rem;margin-top:1px}
+.sp-topic-text{font-size:.82rem;line-height:1.5;color:var(--text-light)}
+
+/* PROOF / REFERENZEN */
+.proof{background:var(--bg-dark);padding:clamp(5rem,10vw,8rem) 0;border-top:1px solid var(--border-dark)}
+.proof-top{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
+.proof-desc{font-size:.95rem;line-height:1.7;color:var(--text-light)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:3.5rem}
+.stat-box{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:1.75rem;text-align:center;transition:all .3s}
+.stat-box:hover{border-color:var(--accent);transform:translateY(-3px)}
+.stat-num{font-family:var(--font-display);font-size:clamp(2rem,3vw,2.8rem);color:var(--text-white);line-height:1;margin-bottom:.4rem}
+.stat-label{font-size:.78rem;color:var(--text-muted)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.test-card{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);padding:2rem;transition:all .4s}
+.test-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-3px)}
+.test-stars{display:flex;gap:2px;color:var(--accent);font-size:.85rem;margin-bottom:1rem}
+.test-quote{font-size:2.5rem;line-height:1;color:var(--accent);opacity:.3;font-family:var(--font-display);margin-bottom:.5rem}
+.test-card p{font-size:.92rem;line-height:1.7;color:var(--text-light);font-style:italic;margin-bottom:1.5rem}
+.test-author{display:flex;align-items:center;gap:.75rem}
+.test-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#2a2a35,#1a1a22);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--accent)}
+.test-name{font-size:.85rem;font-weight:700;color:var(--text-white)}.test-role{font-size:.75rem;color:var(--text-muted)}
+
+/* FAST FORWARD NIGHT */
+.ffn{background:var(--bg-dark);padding:clamp(5rem,10vw,8rem) 0;position:relative;overflow:hidden;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)}
+.ffn-bg-glow{position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,.04) 0%,transparent 50%);pointer-events:none;animation:glowPulse 6s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.1)}}
+.ffn-header{text-align:center;margin-bottom:3.5rem;position:relative;z-index:2}
+.ffn-title{font-family:var(--font-display);font-size:clamp(2.2rem,4.5vw,3.8rem);color:var(--text-white);line-height:1.08;letter-spacing:-.03em;margin-bottom:1.25rem}
+.ffn-title span{color:var(--accent);font-style:italic}
+.ffn-subtitle{font-size:1rem;line-height:1.7;color:var(--text-light);max-width:600px;margin:0 auto}
+.ffn-content{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center;margin-bottom:3rem;position:relative;z-index:2}
+.ffn-video-side{position:relative}
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius-lg);border:1px solid var(--border-dark);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.ffn-info-side{padding:.5rem 0}
+.ffn-quote{font-family:var(--font-display);font-size:1.3rem;color:var(--accent);font-style:italic;margin-bottom:1.25rem;line-height:1.4;opacity:0;animation:fadeUp .7s ease .3s forwards}
+.ffn-text{font-size:.9rem;line-height:1.8;color:var(--text-light);margin-bottom:1.75rem}
+.ffn-stats{display:flex;gap:1.5rem}
+.ffn-stat{text-align:center;padding:.75rem 1.25rem;background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-sm);transition:all .3s}
+.ffn-stat:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ffn-stat-num{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-white);line-height:1.2}
+.ffn-stat-label{font-size:.65rem;color:var(--text-muted);margin-top:.15rem}
+.ffn-images{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;position:relative;z-index:2}
+.ffn-img{border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--border-dark);transition:all .4s}
+.ffn-img:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.3);border-color:rgba(200,255,0,.15)}
+.ffn-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ffn-img:hover img{transform:scale(1.08)}
+
+/* PHOTO STRIP */
+.photo-strip{padding:1.5rem 0;background:var(--bg-dark);border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark);overflow:hidden}
+.ps-track{display:flex;gap:.75rem;animation:psScroll 30s linear infinite;width:max-content}
+.ps-img{width:280px;height:180px;border-radius:var(--radius-sm);overflow:hidden;flex-shrink:0}
+.ps-img img{width:100%;height:100%;object-fit:cover}
+@keyframes psScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* STORY */
+.story{background:var(--bg-dark);padding:clamp(5rem,10vw,8rem) 0;position:relative;overflow:hidden}
+.story::before{content:'';position:absolute;top:50%;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,.03) 0%,transparent 60%);pointer-events:none;transform:translateY(-50%)}
+.story .container{position:relative;z-index:2}
+.story-top{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:4rem}
+.story .section-title .italic{color:var(--accent)}
+.story-desc{font-size:.95rem;line-height:1.7;color:var(--text-light)}
+.sc-item{display:grid;grid-template-columns:clamp(3rem,6vw,5rem) 1fr 1fr;gap:clamp(1rem,2vw,2rem);padding:2.5rem 0;border-bottom:1px solid var(--border-dark)}
+.sc-item:last-child{border-bottom:none}
+.sc-marker{display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.sc-dot{width:14px;height:14px;border-radius:50%;border:3px solid var(--bg-dark);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.sc-dot.d-red{background:#ff5f57;box-shadow:0 0 12px rgba(255,95,87,.3)}.sc-dot.d-yellow{background:#ffbd2e;box-shadow:0 0 12px rgba(255,189,46,.3)}.sc-dot.d-green{background:var(--accent);box-shadow:0 0 12px rgba(200,255,0,.3)}
+.sc-year{font-size:.7rem;font-weight:700;color:var(--text-muted);letter-spacing:.05em;writing-mode:vertical-lr;text-orientation:mixed;transform:rotate(180deg);margin-top:.5rem}
+.sc-text{display:flex;flex-direction:column;justify-content:center}
+.sc-phase{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;padding:.3rem .8rem;border-radius:100px;width:fit-content}
+.sc-phase.p-dark{background:rgba(255,95,87,.1);color:#ff5f57}.sc-phase.p-mid{background:rgba(255,189,46,.1);color:#ffbd2e}.sc-phase.p-up{background:var(--accent-dim);color:var(--accent)}
+.sc-text h3{font-family:var(--font-display);font-size:clamp(1.2rem,1.8vw,1.5rem);line-height:1.3;color:var(--text-white);margin-bottom:.75rem}
+.sc-text p{font-size:.9rem;line-height:1.7;color:var(--text-light)}
+.sc-visual{display:flex;align-items:center;justify-content:center}
+.sc-vis-box{width:100%;aspect-ratio:16/10;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border-dark)}
+.sc-vis-box img{width:100%;height:100%;object-fit:cover}
+.story-quote{margin:3rem 0 0;padding:2.5rem;background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);text-align:center;position:relative}
+.story-quote::before{content:'\201C';font-family:var(--font-display);font-size:6rem;line-height:1;color:var(--accent);opacity:.15;position:absolute;top:.5rem;left:50%;transform:translateX(-50%)}
+.story-quote p{font-family:var(--font-display);font-size:clamp(1.1rem,1.8vw,1.5rem);line-height:1.5;color:var(--text-white);font-style:italic;max-width:700px;margin:0 auto 1rem;position:relative;z-index:2}
+.story-quote cite{font-size:.82rem;font-style:normal;color:var(--accent);font-weight:600}
+
+/* CTA */
+.cta{background:var(--bg-dark);padding:clamp(5rem,12vw,10rem) 0;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--border-dark)}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,.04) 0%,transparent 60%)}
+.cta .container{position:relative;z-index:2}
+.cta-icon{width:64px;height:64px;margin:0 auto 2rem;background:var(--accent-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;animation:hfloat 3s ease-in-out infinite}
+.cta h2{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.2rem);line-height:1.1;color:var(--text-white);letter-spacing:-.03em;margin-bottom:1.25rem}
+.cta h2 .italic{font-style:italic;color:var(--text-muted)}
+.cta .cta-desc{font-size:1.05rem;line-height:1.7;color:var(--text-light);max-width:500px;margin:0 auto 2.5rem}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-trust{margin-top:3rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.cta-trust-item{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--text-muted)}.cta-trust-item .chk{color:var(--accent)}
+
+/* FOOTER */
+footer{background:var(--bg-dark);border-top:1px solid var(--border-dark);padding:3rem 0}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.footer-brand{display:flex;align-items:center;gap:.75rem}
+.fb-icon{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:var(--bg-dark)}
+.fb-text{color:var(--text-white);font-weight:600;font-size:.9rem}
+.footer-links{display:flex;gap:1.5rem;list-style:none}
+.footer-links a{color:var(--text-muted);font-size:.82rem;transition:color .3s}.footer-links a:hover{color:var(--text-white)}
+.footer-socials{display:flex;gap:.6rem}
+.soc-btn{width:38px;height:38px;border-radius:10px;background:var(--bg-card);border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:.8rem;font-weight:700;transition:all .3s}
+.soc-btn:hover{background:var(--accent);color:var(--bg-dark);border-color:var(--accent)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideRight{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes clipReveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes countUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes borderGlow{0%,100%{border-color:rgba(200,255,0,.05)}50%{border-color:rgba(200,255,0,.2)}}
+
+/* Base reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Directional reveals */
+.reveal-left{opacity:0;transform:translateX(-60px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(60px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* Scale reveal */
+.reveal-scale{opacity:0;transform:scale(.85);transition:opacity .7s ease,transform .7s ease}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* Stagger children */
+.stagger-children.visible > *{opacity:1;transform:translateY(0)}
+.stagger-children > *{opacity:0;transform:translateY(25px);transition:opacity .5s ease,transform .5s ease}
+.stagger-children.visible > *:nth-child(1){transition-delay:.05s}
+.stagger-children.visible > *:nth-child(2){transition-delay:.12s}
+.stagger-children.visible > *:nth-child(3){transition-delay:.19s}
+.stagger-children.visible > *:nth-child(4){transition-delay:.26s}
+.stagger-children.visible > *:nth-child(5){transition-delay:.33s}
+.stagger-children.visible > *:nth-child(6){transition-delay:.4s}
+
+/* Parallax elements */
+.parallax{transition:transform .1s linear;will-change:transform}
+
+/* Image clip reveal */
+.img-reveal{clip-path:inset(0 100% 0 0);transition:clip-path .9s cubic-bezier(.77,0,.175,1)}
+.img-reveal.visible{clip-path:inset(0 0 0 0)}
+
+/* Text split animation */
+.text-reveal{overflow:hidden;display:inline-block}
+.text-reveal span{display:inline-block;transform:translateY(110%);transition:transform .6s cubic-bezier(.77,0,.175,1)}
+.text-reveal.visible span{transform:translateY(0)}
+
+/* Number counter glow */
+.num-glow.visible{animation:borderGlow 2s ease 1}
+
+/* Horizontal line expand */
+.line-expand{width:0;height:2px;background:var(--accent);transition:width 1.2s cubic-bezier(.25,.46,.45,.94)}
+.line-expand.visible{width:100%}
+
+/* Card tilt on hover */
+.tilt-card{transition:transform .4s ease}
+.tilt-card:hover{transform:perspective(800px) rotateY(-2deg) rotateX(1deg) translateY(-6px)}
+
+/* Smooth section transitions */
+section{position:relative}
+
+/* Scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:1001;transform-origin:left;transform:scaleX(0);transition:none;pointer-events:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+.hero .container{grid-template-columns:1fr;text-align:center}
+.hero-sub{margin:0 auto 2.5rem}.hero-buttons{justify-content:center}
+.hero-visual{max-width:550px;margin:0 auto}.hero-float{display:none}
+.who .container{grid-template-columns:1fr}.who-images{max-width:500px}
+.wc,.wc.reverse{grid-template-columns:1fr}.wc-img{min-height:280px}
+.story-top{grid-template-columns:1fr}
+.ffn-top{grid-template-columns:1fr}.ffn-content{grid-template-columns:1fr}.ffn-images{grid-template-columns:repeat(2,1fr)}
+.proof-top{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.test-grid{grid-template-columns:1fr}
+.sc-item{grid-template-columns:clamp(2.5rem,5vw,3.5rem) 1fr}.sc-visual{display:none}
+.nav-links{display:none}.hamburger{display:block}
+.nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--bg-dark);padding:2rem;gap:1.25rem;border-bottom:1px solid var(--border-dark)}
+}
+@media(max-width:600px){
+.hero-buttons{flex-direction:column;align-items:center}
+.btn-accent,.btn-outline{width:100%;justify-content:center}
+.who-images{grid-template-columns:1fr 1fr}
+.who-stats-float{position:relative;bottom:auto;right:auto;margin-top:1rem;justify-content:center}
+.follower-bar{flex-wrap:wrap}.fb-item{min-width:calc(50% - .2rem)}
+.cta-buttons{flex-direction:column;align-items:center}
+.cta-buttons .btn-accent,.cta-buttons .btn-outline{width:100%;justify-content:center}
+footer .container{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<nav id="nav">
+<div class="container">
+<a href="#" class="nav-brand"><div class="nav-brand-icon">AB</div><span class="nav-brand-text">Andre Braun</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#who">Über mich</a></li>
+<li><a href="#what">Was ich tue</a></li>
+<li><a href="#story">Meine Story</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#proof">Referenzen</a></li>
+<li><a href="#contact" class="nav-cta-btn">Jetzt anfragen</a></li>
+</ul>
+<button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-badge"><span class="pulse"></span> Offen für Kooperationen & Events 2026</div>
+<h1>Strategie.<br><span class="highlight">Andre Braun.</span><br>Verbindung.</h1>
+<p class="hero-sub">Unternehmer, Social Media Experte und Speaker. Ich bringe Menschen zusammen, baue Netzwerke auf und helfe Marken, digital sichtbar zu werden. Founder der virral GmbH.</p>
+<div class="hero-buttons">
+<a href="#contact" class="btn-accent">Zusammenarbeiten →</a>
+<a href="#story" class="btn-outline">Meine Story</a>
+</div>
+</div>
+<div class="hero-visual" style="position:relative;opacity:0;animation:fadeIn 1s ease .4s forwards">
+<div class="hero-mockup">
+<div class="mockup-bar"><span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-url">andrebraun.de</span></div>
+<div class="mockup-body">
+<div class="mock-img"><img src="img/speaking-close.jpg" alt="Auf der Bühne" style="width:100%;height:100%;object-fit:cover;border-radius:.4rem"></div>
+<div class="mock-img"><img src="img/stage-contra.jpg" alt="Content Creation" style="width:100%;height:100%;object-fit:cover;border-radius:.4rem"></div>
+<div class="mock-img"><img src="img/work-laptop-close.jpg" alt="Branding" style="width:100%;height:100%;object-fit:cover;border-radius:.4rem"></div>
+<div class="mock-img"><img src="img/hero-portrait.png" alt="Portrait" style="width:100%;height:100%;object-fit:cover;border-radius:.4rem"></div>
+</div>
+</div>
+<div class="hero-float f1"><div class="hf-icon green">🎤</div><div><div style="font-size:.8rem;font-weight:700">Speaker & Moderator</div><div style="font-size:.65rem;color:var(--text-muted)">Konferenzen & Events</div></div></div>
+<div class="hero-float f2"><div class="hf-icon blue">🤝</div><div><div style="font-size:.8rem;font-weight:700">Netzwerk & Community</div><div style="font-size:.65rem;color:var(--text-muted)">Menschen verbinden</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-section">
+<div class="logos-label">Bekannt aus</div>
+<div class="logos-track">
+<div class="logo-item"><span>BILD</span></div><div class="logo-item"><span>FAZ</span></div><div class="logo-item"><span>Business Insider</span></div><div class="logo-item"><span>YouTube</span></div><div class="logo-item"><span>TikTok</span></div><div class="logo-item"><span>Instagram</span></div><div class="logo-item"><span>Snapchat</span></div><div class="logo-item"><span>Contra</span></div><div class="logo-item"><span>DRX</span></div>
+<div class="logo-item"><span>BILD</span></div><div class="logo-item"><span>FAZ</span></div><div class="logo-item"><span>Business Insider</span></div><div class="logo-item"><span>YouTube</span></div><div class="logo-item"><span>TikTok</span></div><div class="logo-item"><span>Instagram</span></div><div class="logo-item"><span>Snapchat</span></div><div class="logo-item"><span>Contra</span></div><div class="logo-item"><span>DRX</span></div>
+</div>
+</div>
+
+<!-- WER BIN ICH -->
+<section class="who" id="who">
+<div class="container">
+<div class="who-images reveal-left">
+<div class="who-img-box"><img src="img/hero-portrait.png" alt="Andre Braun Portrait" style="aspect-ratio:3/4"></div>
+<div class="who-img-box"><img src="img/work-laptop-close.jpg" alt="Andre am Laptop" style="aspect-ratio:1"></div>
+<div class="who-img-box"><img src="img/casual-outdoor.jpg" alt="Andre casual" style="aspect-ratio:1"></div>
+<div class="who-stats-float">
+<div class="who-stat"><div class="who-stat-num">virral</div><div class="who-stat-label">GmbH Founder</div></div>
+<div class="who-stat"><div class="who-stat-num">170+</div><div class="who-stat-label">Gäste FFN Event</div></div>
+<div class="who-stat"><div class="who-stat-num">4</div><div class="who-stat-label">Plattformen</div></div>
+</div>
+</div>
+<div class="who-text reveal-right">
+<div class="section-tag">Wer bin ich</div>
+<h2>Unternehmer mit <span class="accent">ungewöhnlichem Weg.</span></h2>
+<p>Ich bin Andre Braun – Founder der virral GmbH, Speaker und Content Creator. Mein Weg war nicht geradlinig: Aufgewachsen im Heim, früh in die Medien geraten, Fehler gemacht, daraus gelernt. Heute helfe ich Unternehmen dabei, Social Media strategisch zu nutzen – und bringe Menschen durch Events und Netzwerkformate zusammen.</p>
+<p>Was mich antreibt: echte Verbindungen schaffen. Ob auf der Bühne, in Workshops oder bei unserer Fast Forward Night – ich glaube daran, dass die besten Ergebnisse entstehen, wenn die richtigen Leute zusammenkommen.</p>
+<div class="press-row">
+<div class="press-label">Bekannt aus</div>
+<div class="press-logos"><span class="press-logo">BILD</span><span class="press-logo">FAZ</span><span class="press-logo">Business Insider</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WAS MACHE ICH -->
+<section class="what" id="what">
+<div class="container">
+<div class="section-tag">Was ich tue</div>
+<h2 class="section-title reveal">Was ich <span class="muted">mache.</span><br><span class="italic">Und warum.</span></h2>
+<div class="what-cards">
+
+<!-- MARKETING -->
+<div class="wc reveal-left tilt-card">
+<div class="wc-img"><img src="img/work-laptop-wide.jpg" alt="Andre Braun am Laptop"><div class="wc-img-overlay r"></div></div>
+<div class="wc-body">
+<span class="wc-num">01 — VIRRAL GMBH</span>
+<h3>Social Media<br>Marketing</h3>
+<p>Mit der virral GmbH unterstütze ich Unternehmen dabei, Social Media als echten Vertriebskanal zu nutzen. Strategie, Content und Umsetzung – alles aus einer Hand, mit einem Team, das versteht, wie digitale Reichweite funktioniert.</p>
+<a href="#contact" class="wc-link">Mehr erfahren →</a>
+</div>
+</div>
+
+<!-- INFLUENCER -->
+<div class="wc reverse reveal-right tilt-card">
+<div class="wc-body">
+<span class="wc-num">02 — CONTENT & REICHWEITE</span>
+<h3>Organische<br>Reichweite</h3>
+<div class="fb-total"><div class="fb-total-num">1.062.000</div><div class="fb-total-label">Community über alle Plattformen</div></div>
+<div class="follower-bar">
+<div class="fb-item"><div class="fb-item-num">430K</div><div class="fb-item-label">YouTube</div></div>
+<div class="fb-item"><div class="fb-item-num">400K</div><div class="fb-item-label">TikTok</div></div>
+<div class="fb-item"><div class="fb-item-num">132K</div><div class="fb-item-label">Snapchat</div></div>
+<div class="fb-item"><div class="fb-item-num">100K</div><div class="fb-item-label">Instagram</div></div>
+</div>
+<a href="#contact" class="wc-link">Zusammenarbeiten →</a>
+</div>
+<div class="wc-img"><img src="img/content-shoot.jpg" alt="Andre Content"><div class="wc-img-overlay l"></div></div>
+</div>
+
+<!-- SPEAKER -->
+<div class="wc reveal-left tilt-card">
+<div class="wc-img"><img src="img/stage-drx-wide.jpg" alt="Andre auf der DRX Bühne"><div class="wc-img-overlay r"></div></div>
+<div class="wc-body">
+<span class="wc-num">03 — SPEAKER & EVENTS</span>
+<h3>Vorträge &<br>Networking.</h3>
+<p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1rem">Meine Themen auf der Bühne:</p>
+<div class="speaker-topics">
+<div class="sp-topic"><div class="sp-topic-icon">📱</div><div class="sp-topic-text"><strong style="color:var(--text-white)">Social Media Marketing für Unternehmen</strong> – wie es heute wirklich funktioniert</div></div>
+<div class="sp-topic"><div class="sp-topic-icon">⚡</div><div class="sp-topic-text"><strong style="color:var(--text-white)">Medienkonsum der GenZ</strong> – was Unternehmen daraus lernen können</div></div>
+<div class="sp-topic"><div class="sp-topic-icon">🤝</div><div class="sp-topic-text"><strong style="color:var(--text-white)">Mein Weg:</strong> Von Rückschlägen und dem, was ich daraus gelernt habe</div></div>
+</div>
+<a href="#contact" class="wc-link" style="margin-top:1.25rem">Anfrage stellen →</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MEINE STORY -->
+<section class="story" id="story">
+<div class="container">
+<div class="story-top">
+<div>
+<div class="section-tag">Meine Story</div>
+<h2 class="section-title reveal">Kein gerader <span class="muted">Weg.</span><br><span class="italic">Aber meiner.</span></h2>
+</div>
+<p class="story-desc reveal">Meine Geschichte ist nicht perfekt – und genau das macht sie ehrlich. Vom Heim über frühe Medienaufmerksamkeit, schwere Fehler und den Neuanfang.</p>
+</div>
+
+<div class="sc-item reveal">
+<div class="sc-marker"><div class="sc-dot d-yellow"></div><span class="sc-year">START</span></div>
+<div class="sc-text">
+<span class="sc-phase p-mid">Der Anfang</span>
+<h3>Aufgewachsen im Heim.</h3>
+<p>Ohne familiäres Netzwerk, ohne Startkapital. Was ich hatte: den Willen, mir selbst etwas aufzubauen. Social Media war mein Weg, Menschen zu erreichen und Verbindungen zu schaffen, die ich vorher nie hatte.</p>
+</div>
+<div class="sc-visual"><div class="sc-vis-box"><img src="img/casual-outdoor.jpg" alt="Die Anfänge"></div></div>
+</div>
+
+<div class="sc-item reveal">
+<div class="sc-marker"><div class="sc-dot d-green"></div><span class="sc-year">MIT 18</span></div>
+<div class="sc-text">
+<span class="sc-phase p-up">Medienaufmerksamkeit</span>
+<h3>Frühe Presse & erste Firma.</h3>
+<p>BILD, FAZ und Business Insider berichteten über mich. Mit 18 gründete ich mein erstes Unternehmen. Es ging schnell – und ich war noch nicht bereit für das, was damit kam.</p>
+</div>
+<div class="sc-visual"><div class="sc-vis-box"><img src="img/event-duo.jpg" alt="Presse"></div></div>
+</div>
+
+<div class="sc-item reveal">
+<div class="sc-marker"><div class="sc-dot d-red"></div><span class="sc-year">MIT 21</span></div>
+<div class="sc-text">
+<span class="sc-phase p-dark">Rückschläge</span>
+<h3>Schulden, Fehler,<br>Neuanfang.</h3>
+<p>Über eine Million Euro Schulden, ein Strafverfahren und eine Öffentlichkeit, die zusah. Es war der schwierigste Abschnitt meines Lebens. Aber auch der, aus dem ich am meisten gelernt habe.</p>
+</div>
+<div class="sc-visual"><div class="sc-vis-box"><img src="img/hero-skyline.jpg" alt="Nachdenklich"></div></div>
+</div>
+
+<div class="sc-item reveal">
+<div class="sc-marker"><div class="sc-dot d-green"></div><span class="sc-year">HEUTE</span></div>
+<div class="sc-text">
+<span class="sc-phase p-up">Heute</span>
+<h3>virral GmbH, Events<br>& Netzwerk.</h3>
+<p>Heute leite ich die virral GmbH, organisiere Events wie die Fast Forward Night und arbeite jeden Tag daran, Menschen und Unternehmen zusammenzubringen. Nicht trotz meiner Geschichte – sondern mit ihr.</p>
+</div>
+<div class="sc-visual"><div class="sc-vis-box"><img src="img/stage-contra-wide.jpg" alt="Heute"></div></div>
+</div>
+
+<div class="story-quote reveal">
+<p>Ich glaube daran, dass die besten Dinge entstehen, wenn man die richtigen Menschen zusammenbringt – ehrlich, auf Augenhöhe und mit einem gemeinsamen Ziel.</p>
+<cite>— Andre Braun</cite>
+</div>
+</div>
+</section>
+
+
+<!-- FAST FORWARD NIGHT -->
+<section class="ffn" id="events">
+<div class="ffn-bg-glow"></div>
+<div class="container">
+<div class="ffn-header reveal">
+<div class="section-tag">Events & Netzwerk</div>
+<h2 class="ffn-title">VIRRAL Fast Forward<br><span>Night.</span></h2>
+<p class="ffn-subtitle">Wo CEOs auf Creator treffen, Mittelständler auf junge Unternehmer – und alle mit einem gemeinsamen Ziel: echte Verbindungen.</p>
+</div>
+
+<div class="ffn-content">
+<div class="ffn-video-side reveal-scale">
+<div class="video-wrapper">
+<iframe src="https://www.youtube-nocookie.com/embed/t6eTKfqXbK8" title="VIRRAL Fast Forward Night" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<div class="ffn-info-side reveal">
+<div class="ffn-quote">„TikTok & Networking auf höchstem Niveau"</div>
+<p class="ffn-text">Gemeinsam mit dem BVMW Bergisches Rheinland luden wir über 170 Gäste in das Althoff Grandhotel Schloss Bensberg. Auf dem Programm: Vertical Video, organische Reichweite und die Frage, wie Unternehmen TikTok strategisch nutzen können. Zum Abschluss sprach Bundesminister a.D. Andreas Scheuer – bevor im Ballsaal beim Netzwerken die besten Gespräche des Abends entstanden.</p>
+<div class="ffn-stats">
+<div class="ffn-stat"><div class="ffn-stat-num">170+</div><div class="ffn-stat-label">Gäste</div></div>
+<div class="ffn-stat"><div class="ffn-stat-num">BVMW</div><div class="ffn-stat-label">Partner</div></div>
+<div class="ffn-stat"><div class="ffn-stat-num">Schloss</div><div class="ffn-stat-label">Bensberg</div></div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+<div class="ps-track">
+<div class="ps-img"><img src="img/speaking-event.jpg" alt=""></div>
+<div class="ps-img"><img src="img/hero-skyline.jpg" alt=""></div>
+<div class="ps-img"><img src="img/stage-contra.jpg" alt=""></div>
+<div class="ps-img"><img src="img/work-laptop-close.jpg" alt=""></div>
+<div class="ps-img"><img src="img/event-duo.jpg" alt=""></div>
+<div class="ps-img"><img src="img/stage-drx-close.jpg" alt=""></div>
+<div class="ps-img"><img src="img/hero-portrait.png" alt=""></div>
+<div class="ps-img"><img src="img/speaking-event.jpg" alt=""></div>
+<div class="ps-img"><img src="img/hero-skyline.jpg" alt=""></div>
+<div class="ps-img"><img src="img/stage-contra.jpg" alt=""></div>
+<div class="ps-img"><img src="img/work-laptop-close.jpg" alt=""></div>
+<div class="ps-img"><img src="img/event-duo.jpg" alt=""></div>
+<div class="ps-img"><img src="img/stage-drx-close.jpg" alt=""></div>
+<div class="ps-img"><img src="img/hero-portrait.png" alt=""></div>
+</div>
+</div>
+
+
+<!-- REFERENZEN -->
+<section class="proof" id="proof">
+<div class="container">
+<div class="proof-top">
+<div>
+<div class="section-tag">Referenzen & Ergebnisse</div>
+<h2 class="section-title reveal">Menschen glauben<br><span class="italic">Menschen.</span></h2>
+</div>
+<p class="proof-desc reveal">Was andere über die Zusammenarbeit sagen.</p>
+</div>
+<div class="stats-row reveal stagger-children">
+<div class="stat-box"><div class="stat-num">1M+</div><div class="stat-label">Community Reichweite</div></div>
+<div class="stat-box"><div class="stat-num">50+</div><div class="stat-label">Keynotes & Vorträge</div></div>
+<div class="stat-box"><div class="stat-num">30+</div><div class="stat-label">Marken-Kooperationen</div></div>
+<div class="stat-box"><div class="stat-num">98%</div><div class="stat-label">Weiterempfehlung</div></div>
+</div>
+<div class="test-grid reveal stagger-children">
+<div class="test-card">
+<div class="test-stars">★★★★★</div>
+<div class="test-quote">„</div>
+<p>Andre bringt eine Energie auf die Bühne, die man nicht vergisst. Unsere Teilnehmer reden heute noch davon. Absolute Empfehlung.</p>
+<div class="test-author"><div class="test-avatar">VN</div><div><div class="test-name">Veranstaltername</div><div class="test-role">Event-Agentur</div></div></div>
+</div>
+<div class="test-card">
+<div class="test-stars">★★★★★</div>
+<div class="test-quote">„</div>
+<p>Endlich jemand, der Social Media nicht als Spielerei sieht, sondern als strategisches Werkzeug. Die Zusammenarbeit war Gold wert.</p>
+<div class="test-author"><div class="test-avatar">KN</div><div><div class="test-name">Kundenname</div><div class="test-role">Geschäftsführer, Unternehmen</div></div></div>
+</div>
+<div class="test-card">
+<div class="test-stars">★★★★★</div>
+<div class="test-quote">„</div>
+<p>Authentisch, direkt und mit einem klaren Plan. Andre hat unserer Marke eine Stimme gegeben, die wirklich zu uns passt.</p>
+<div class="test-author"><div class="test-avatar">PN</div><div><div class="test-name">Partnername</div><div class="test-role">Marketing-Leitung, Brand</div></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+<div class="container">
+<div class="cta-icon">🤝</div>
+<h2 class="reveal">Lass uns<br><span class="italic">kennenlernen.</span></h2>
+<p class="cta-desc reveal">Ob Zusammenarbeit, ein gemeinsames Event oder einfach ein gutes Gespräch – ich freue mich auf deine Nachricht.</p>
+<div class="cta-buttons reveal">
+<a href="mailto:hello@virral.de" class="btn-accent">E-Mail schreiben →</a>
+<a href="https://instagram.com/" class="btn-outline" target="_blank">Instagram DM</a>
+</div>
+<div class="cta-trust reveal">
+<div class="cta-trust-item"><span class="chk">✓</span> Antwort innerhalb 24h</div>
+<div class="cta-trust-item"><span class="chk">✓</span> Unverbindliches Erstgespräch</div>
+<div class="cta-trust-item"><span class="chk">✓</span> Persönlich, nicht automatisiert</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-brand"><div class="fb-icon">AB</div><span class="fb-text">Andre Braun</span></div>
+<ul class="footer-links"><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="#contact">Kontakt</a></li></ul>
+<div class="footer-socials"><a href="#" class="soc-btn">YT</a><a href="#" class="soc-btn">TT</a><a href="#" class="soc-btn">SC</a><a href="#" class="soc-btn">IG</a></div>
+</div>
+</footer>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+// Scroll progress bar
+const progressBar=document.getElementById('scrollProgress');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  const p=window.scrollY/h;
+  progressBar.style.transform=`scaleX(${p})`;
+},{passive:true});
+
+// Intersection Observer for all reveal types
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      // Counter animation for stat numbers
+      if(e.target.classList.contains('stagger-children')){
+        e.target.querySelectorAll('.stat-num,.ffn-stat-num,.who-stat-num,.fb-total-num').forEach(el=>{
+          animateCounter(el);
+        });
+      }
+      revealObs.unobserve(e.target);
+    }
+  });
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger-children,.img-reveal,.text-reveal,.line-expand').forEach(el=>revealObs.observe(el));
+
+// Counter animation
+function animateCounter(el){
+  const text=el.textContent;
+  const match=text.match(/^([\d.,]+)/);
+  if(!match)return;
+  const numStr=match[1];
+  const suffix=text.replace(numStr,'');
+  const hasDot=numStr.includes('.');
+  const target=parseFloat(numStr.replace(/\./g,'').replace(',','.'));
+  if(isNaN(target)||target>100000)return;
+  const duration=1200;
+  const start=performance.now();
+  function step(now){
+    const elapsed=now-start;
+    const progress=Math.min(elapsed/duration,1);
+    const eased=1-Math.pow(1-progress,3);
+    let current=Math.round(eased*target);
+    if(hasDot){
+      el.textContent=current.toLocaleString('de-DE')+suffix;
+    }else{
+      el.textContent=current+suffix;
+    }
+    if(progress<1)requestAnimationFrame(step);
+    else el.textContent=text;
+  }
+  requestAnimationFrame(step);
+}
+
+// Parallax on scroll
+const parallaxEls=document.querySelectorAll('.hero-visual,.hero::before,.cta::before,.ffn-bg-glow');
+let ticking=false;
+window.addEventListener('scroll',()=>{
+  if(!ticking){
+    requestAnimationFrame(()=>{
+      const scrollY=window.scrollY;
+      parallaxEls.forEach(el=>{
+        const speed=el.classList.contains('hero-visual')?.3:
+                    el.classList.contains('ffn-bg-glow')?.15:.2;
+        const rect=el.getBoundingClientRect();
+        if(rect.top<window.innerHeight&&rect.bottom>0){
+          el.style.transform=`translateY(${scrollY*speed}px)`;
+        }
+      });
+      ticking=false;
+    });
+    ticking=true;
+  }
+},{passive:true});
+
+// Smooth anchor scrolling with offset
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id==='#')return;
+    const target=document.querySelector(id);
+    if(target){
+      e.preventDefault();
+      const top=target.getBoundingClientRect().top+window.scrollY-80;
+      window.scrollTo({top,behavior:'smooth'});
+    }
+  });
+});
+
+// Magnetic hover effect on buttons
+document.querySelectorAll('.btn-accent,.btn-outline,.nav-cta-btn,.btn-cta-primary').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const rect=btn.getBoundingClientRect();
+    const x=e.clientX-rect.left-rect.width/2;
+    const y=e.clientY-rect.top-rect.height/2;
+    btn.style.transform=`translate(${x*.15}px,${y*.15}px)`;
+  });
+  btn.addEventListener('mouseleave',()=>{
+    btn.style.transform='';
+  });
+});
+
+// Tilt effect on cards with mouse
+document.querySelectorAll('.tilt-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const x=(e.clientX-rect.left)/rect.width-.5;
+    const y=(e.clientY-rect.top)/rect.height-.5;
+    card.style.transform=`perspective(800px) rotateY(${x*4}deg) rotateX(${-y*4}deg) translateY(-6px)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='';
+  });
+});
+
+// Photo strip speed up on hover
+const psTrack=document.querySelector('.ps-track');
+if(psTrack){
+  const strip=psTrack.parentElement;
+  strip.addEventListener('mouseenter',()=>psTrack.style.animationDuration='15s');
+  strip.addEventListener('mouseleave',()=>psTrack.style.animationDuration='30s');
+}
+
+// Timeline dots pulse on scroll
+const timelineDots=document.querySelectorAll('.sc-dot');
+const dotObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.transform='scale(1.4)';
+      setTimeout(()=>e.target.style.transform='scale(1)',400);
+      e.target.style.transition='transform .4s cubic-bezier(.34,1.56,.64,1)';
+    }
+  });
+},{threshold:.5});
+timelineDots.forEach(d=>dotObs.observe(d));
+</script>
+</body>
+</html>
